@@ -13,6 +13,7 @@ public class Usuario {
 	private Long id;
 	private String nome;
 	private Long senha;
+	private String login;
 	private String email;
 	public Long getId() {
 		return id;
@@ -32,6 +33,12 @@ public class Usuario {
 	public void setSenha(Long senha) {
 		this.senha = senha;
 	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -43,6 +50,7 @@ public class Usuario {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		return result;
 	}
 	@Override
@@ -59,8 +67,13 @@ public class Usuario {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
+		if (login == null) {
+			if (other.login != null)
+				return false;
+		} else if (!login.equals(other.login))
+			return false;
 		return true;
 	}
-
+	
 	
 }
