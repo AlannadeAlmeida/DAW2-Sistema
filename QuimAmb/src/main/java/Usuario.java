@@ -61,15 +61,6 @@ public class Usuario {
 			return false;
 		return true;
 	}
-	public Usuario(Long id, String nome, Long senha, String email) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.senha = senha;
-		this.email = email;
-	}
-	
-	
 
 	
 }

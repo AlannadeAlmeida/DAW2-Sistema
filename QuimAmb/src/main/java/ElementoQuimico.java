@@ -70,14 +70,7 @@ public class ElementoQuimico {
 			return false;
 		return true;
 	}
-	public ElementoQuimico(Long id_eq, Long natomico, String nome, Long massa, Long familia) {
-		super();
-		this.id_eq = id_eq;
-		this.natomico = natomico;
-		this.nome = nome;
-		this.massa = massa;
-		this.familia = familia;
-	}
+	
 
 
 }

@@ -54,13 +54,6 @@ public class Produto {
 			return false;
 		return true;
 	}
-	public Produto(Long id, String nome, Long tempodedecomposicao) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.tempodedecomposicao = tempodedecomposicao;
-	}
-	
 	
 
 }

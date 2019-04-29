@@ -54,12 +54,5 @@ public class SeresVivos {
 			return false;
 		return true;
 	}
-	public SeresVivos(Long id_sv, String especie, String classe) {
-		super();
-		this.id_sv = id_sv;
-		this.classe = classe;
-	}
-
-	
 
 }

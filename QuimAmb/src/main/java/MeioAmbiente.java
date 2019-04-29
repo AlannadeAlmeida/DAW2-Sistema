@@ -47,11 +47,6 @@ public class MeioAmbiente {
 			return false;
 		return true;
 	}
-	public MeioAmbiente(Long id_ma, String floresta) {
-		super();
-		this.id_ma = id_ma;
-		this.floresta = floresta;
-	}
 	
 	
 	

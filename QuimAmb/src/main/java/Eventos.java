@@ -69,16 +69,6 @@ public class Eventos {
 			return false;
 		return true;
 	}
-	public Eventos(Long id_ev, String causa, Long duracao, String local) {
-		super();
-		this.id_ev = id_ev;
-		this.causa = causa;
-		this.duracao = duracao;
-		this.local = local;
-	}
-
-	
-	
 	
 	
 }
