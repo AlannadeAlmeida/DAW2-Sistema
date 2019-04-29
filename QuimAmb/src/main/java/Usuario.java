@@ -8,11 +8,9 @@ import javax.persistence.Table;
 public class Usuario {
 	
 	@Id
-	@GeneratedValue
-	
-	private Long id;
+	@GeneratedValue Long id;
 	private String nome;
-	private Long senha;
+	private String senha;
 	private String login;
 	private String email;
 	public Long getId() {
@@ -27,10 +25,10 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getSenha() {
+	public String getSenha() {
 		return senha;
 	}
-	public void setSenha(Long senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	public String getLogin() {
