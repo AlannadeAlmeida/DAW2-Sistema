@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="SeresVivos")
-public class SeresVivos {
+public class SeresVivos implements Identificavel{
 	
 	@Id
 	@GeneratedValue

@@ -1,5 +1,5 @@
 
-public class Consequencia {
+public class Consequencia implements Identificavel{
 	
 	private Long id;
 	private Long id_ma;

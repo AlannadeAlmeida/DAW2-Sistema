@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="ElementoQuimico")
-public class ElementoQuimico {
+public class ElementoQuimico implements Identificavel{
 	
 	@Id
 	@GeneratedValue

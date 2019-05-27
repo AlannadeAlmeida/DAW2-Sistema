@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="MeioAmbiente")
-public class MeioAmbiente {
+public class MeioAmbiente implements Identificavel {
 	 
 	@Id
 	@GeneratedValue

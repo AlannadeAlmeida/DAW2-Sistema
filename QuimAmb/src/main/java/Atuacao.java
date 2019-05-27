@@ -1,5 +1,5 @@
 
-public class Atuacao {
+public class Atuacao implements Identificavel {
 	
 	private Long id;
 	private Long id_eq;

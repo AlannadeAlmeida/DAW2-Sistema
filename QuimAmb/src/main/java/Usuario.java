@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Usuario")
-public class Usuario {
+public class Usuario implements Identificavel{
 	
 	@Id
 	@GeneratedValue Long id;

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Eventos")
-public class Eventos {
+public class Eventos implements Identificavel {
 
 	@Id
 	@GeneratedValue
