@@ -1,11 +1,16 @@
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Produto")
-public class Produto {
+public class Produto implements Identificavel {
 
 	@Id
 	@GeneratedValue
@@ -13,6 +18,19 @@ public class Produto {
 	private Long id;
 	private String nome;
 	private Long tempodedecomposicao;
+	
+	@ManyToMany
+	@JoinTable(name="afeta", joinColumns=@JoinColumn(name="id_produto"), inverseJoinColumns=@JoinColumn(name="id_meio_ambiente"))
+	private Set<MeioAmbiente> meioAmbientes;
+	
+	public Set<MeioAmbiente> getMeioAmbientes() {
+		return meioAmbientes;
+	}
+	
+	public void setMeioAmbientes(Set<MeioAmbiente> meioAmbientes) {
+		this.meioAmbientes = meioAmbientes;
+	}
+	
 	public Long getId() {
 		return id;
 	}
