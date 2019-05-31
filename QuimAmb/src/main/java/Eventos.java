@@ -1,4 +1,6 @@
 import java.awt.List;
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,11 +24,18 @@ public class Eventos implements Identificavel {
 	private String causa;
 	private Long duracao;
 	private String local;
-	public Long getId() {
+	private Date data;
+	public List getUsuarios() {
+		return usuarios;
+	}
+	public void setUsuarios(List usuarios) {
+		this.usuarios = usuarios;
+	}
+	public Long getId_ev() {
 		return id_ev;
 	}
-	public void setId(Long id) {
-		this.id_ev = id;
+	public void setId_ev(Long id_ev) {
+		this.id_ev = id_ev;
 	}
 	public String getCausa() {
 		return causa;
@@ -45,6 +54,12 @@ public class Eventos implements Identificavel {
 	}
 	public void setLocal(String local) {
 		this.local = local;
+	}
+	public Date getData() {
+		return data;
+	}
+	public void setData(Date data) {
+		this.data = data;
 	}
 	@Override
 	public int hashCode() {
@@ -69,6 +84,5 @@ public class Eventos implements Identificavel {
 			return false;
 		return true;
 	}
-	
 	
 }

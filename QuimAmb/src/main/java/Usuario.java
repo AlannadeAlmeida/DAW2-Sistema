@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ public class Usuario implements Identificavel{
 	private String senha;
 	private String login;
 	private String email;
+	ArrayList <Denuncia> denuncias;
+	
 	public Long getId() {
 		return id;
 	}

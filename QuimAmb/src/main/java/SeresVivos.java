@@ -13,6 +13,7 @@ public class SeresVivos implements Identificavel{
 	private Long id_sv;
 	private String especie;
 	private String classe;
+	private String nome;
 	public Long getId_sv() {
 		return id_sv;
 	}
@@ -30,6 +31,12 @@ public class SeresVivos implements Identificavel{
 	}
 	public void setClasse(String classe) {
 		this.classe = classe;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	@Override
 	public int hashCode() {
@@ -54,5 +61,5 @@ public class SeresVivos implements Identificavel{
 			return false;
 		return true;
 	}
-
+	
 }
