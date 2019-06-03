@@ -11,17 +11,17 @@ public class ElementoQuimico implements Identificavel{
 	@Id
 	@GeneratedValue
 	
-	private Long id_eq;
+	private Long id;
 	private Long natomico;;
 	private String nome;
 	private Long massa;
 	private Long familia;
 	
-	public Long getId_eq() {
-		return id_eq;
+	public Long getId() {
+		return id;
 	}
-	public void setId_eq(Long id_eq) {
-		this.id_eq = id_eq;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Long getNatomico() {
 		return natomico;
@@ -51,7 +51,7 @@ public class ElementoQuimico implements Identificavel{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_eq == null) ? 0 : id_eq.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -63,10 +63,10 @@ public class ElementoQuimico implements Identificavel{
 		if (getClass() != obj.getClass())
 			return false;
 		ElementoQuimico other = (ElementoQuimico) obj;
-		if (id_eq == null) {
-			if (other.id_eq != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!id_eq.equals(other.id_eq))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}

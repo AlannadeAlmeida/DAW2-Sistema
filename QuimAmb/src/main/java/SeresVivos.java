@@ -10,15 +10,15 @@ public class SeresVivos implements Identificavel{
 	@Id
 	@GeneratedValue
 	
-	private Long id_sv;
+	private Long id;
 	private String especie;
 	private String classe;
 	private String nome;
-	public Long getId_sv() {
-		return id_sv;
+	public Long getId() {
+		return id;
 	}
-	public void setId_sv(Long id_sv) {
-		this.id_sv = id_sv;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getEspecie() {
 		return especie;
@@ -42,7 +42,7 @@ public class SeresVivos implements Identificavel{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_sv == null) ? 0 : id_sv.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -54,10 +54,10 @@ public class SeresVivos implements Identificavel{
 		if (getClass() != obj.getClass())
 			return false;
 		SeresVivos other = (SeresVivos) obj;
-		if (id_sv == null) {
-			if (other.id_sv != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!id_sv.equals(other.id_sv))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}

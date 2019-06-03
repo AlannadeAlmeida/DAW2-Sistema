@@ -1,17 +1,17 @@
 
 public class Empresa implements Identificavel{
 
-	private Long id_emp;
+	private Long id;
 	private String nome;
 	private String area_de_atuacao;
 	private Long financiamento;
 	private String representante;
 	
-	public Long getId_emp() {
-		return id_emp;
+	public Long getId() {
+		return id;
 	}
-	public void setId_emp(Long id_emp) {
-		this.id_emp = id_emp;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -41,7 +41,7 @@ public class Empresa implements Identificavel{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_emp == null) ? 0 : id_emp.hashCode());
+		result = prime * result + ((id== null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -53,10 +53,10 @@ public class Empresa implements Identificavel{
 		if (getClass() != obj.getClass())
 			return false;
 		Empresa other = (Empresa) obj;
-		if (id_emp == null) {
-			if (other.id_emp != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!id_emp.equals(other.id_emp))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}

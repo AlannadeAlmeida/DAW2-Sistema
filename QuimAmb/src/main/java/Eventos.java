@@ -4,38 +4,34 @@ import java.sql.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Eventos")
 public class Eventos implements Identificavel {
 
-	@Id
-	@GeneratedValue
-	
-	@ManyToMany
-        
-    @OneToMany(mappedBy = "Usuario")
+       
     private List usuarios;
-        
-	private Long id_ev;
+   
+	@Id
+	@GeneratedValue    
+	private Long id;
 	private String causa;
 	private Long duracao;
 	private String local;
 	private Date data;
+	
 	public List getUsuarios() {
 		return usuarios;
 	}
 	public void setUsuarios(List usuarios) {
 		this.usuarios = usuarios;
 	}
-	public Long getId_ev() {
-		return id_ev;
+	public Long getId() {
+		return id;
 	}
-	public void setId_ev(Long id_ev) {
-		this.id_ev = id_ev;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getCausa() {
 		return causa;
@@ -65,7 +61,7 @@ public class Eventos implements Identificavel {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id_ev == null) ? 0 : id_ev.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -77,10 +73,10 @@ public class Eventos implements Identificavel {
 		if (getClass() != obj.getClass())
 			return false;
 		Eventos other = (Eventos) obj;
-		if (id_ev == null) {
-			if (other.id_ev != null)
+		if (id == null) {
+			if (other.id!= null)
 				return false;
-		} else if (!id_ev.equals(other.id_ev))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
