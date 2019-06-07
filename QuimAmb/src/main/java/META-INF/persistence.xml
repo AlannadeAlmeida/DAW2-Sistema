@@ -8,5 +8,6 @@
 	<class>SeresVivos</class>
 	<class>Usuario</class>
 	<class>Consequencia</class>
+	<class>Beneficio</class>
 	</persistence-unit>
 </persistence>

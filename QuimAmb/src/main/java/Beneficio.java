@@ -1,7 +1,13 @@
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Beneficio")
 public class Beneficio implements Identificavel{
 	
+	@Id
 	private Long id;
 	ArrayList <ElementoQuimico> quantidade;
 	
