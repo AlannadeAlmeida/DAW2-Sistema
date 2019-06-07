@@ -7,5 +7,6 @@
 	<class>Produto</class>
 	<class>SeresVivos</class>
 	<class>Usuario</class>
+	<class>Consequencia</class>
 	</persistence-unit>
 </persistence>

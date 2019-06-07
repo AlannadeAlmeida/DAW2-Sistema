@@ -1,28 +1,35 @@
-import javax.persistence.Id;
+import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity 
+@Table(name="Consequencia")
 public class Consequencia implements Identificavel{
 	
 	@Id
 	private Long id;
-	private Long id_ma;
-	private Long id_eq;
+	ArrayList <ElementoQuimico> quantidade;
+	ArrayList <ElementoQuimico> prejudiciais;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getId_ma() {
-		return id_ma;
+	public ArrayList<ElementoQuimico> getQuantidade() {
+		return quantidade;
 	}
-	public void setId_ma(Long id_ma) {
-		this.id_ma = id_ma;
+	public void setQuantidade(ArrayList<ElementoQuimico> quantidade) {
+		this.quantidade = quantidade;
 	}
-	public Long getId_eq() {
-		return id_eq;
+	public ArrayList<ElementoQuimico> getPrejudiciais() {
+		return prejudiciais;
 	}
-	public void setId_eq(Long id_eq) {
-		this.id_eq = id_eq;
+	public void setPrejudiciais(ArrayList<ElementoQuimico> prejudiciais) {
+		this.prejudiciais = prejudiciais;
 	}
 	@Override
 	public int hashCode() {
@@ -46,12 +53,6 @@ public class Consequencia implements Identificavel{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	public Consequencia(Long id, Long id_ma, Long id_eq) {
-		super();
-		this.id = id;
-		this.id_ma = id_ma;
-		this.id_eq = id_eq;
 	}
 	
 	
