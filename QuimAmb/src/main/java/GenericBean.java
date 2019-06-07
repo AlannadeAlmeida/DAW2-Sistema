@@ -1,6 +1,5 @@
 import java.io.Serializable;
 import java.util.Collection;
-
 import javax.inject.Inject;
 
 public abstract class GenericBean<E extends Identificavel> implements Serializable{

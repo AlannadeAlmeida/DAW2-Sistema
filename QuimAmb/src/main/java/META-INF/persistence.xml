@@ -9,5 +9,6 @@
 	<class>Usuario</class>
 	<class>Consequencia</class>
 	<class>Beneficio</class>
+	<class>Denuncia</class>
 	</persistence-unit>
 </persistence>

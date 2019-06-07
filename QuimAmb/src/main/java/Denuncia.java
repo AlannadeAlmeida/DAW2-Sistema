@@ -1,5 +1,9 @@
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Denuncia")
 public class Denuncia implements Identificavel {
 
 	@Id
