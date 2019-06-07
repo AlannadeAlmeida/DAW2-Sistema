@@ -1,6 +1,8 @@
+import javax.persistence.Id;
 
 public class Denuncia implements Identificavel {
 
+	@Id
 	private Long id;
 	private String cidade;
 	private String regiao;

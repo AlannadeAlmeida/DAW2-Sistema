@@ -1,7 +1,12 @@
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +21,19 @@ public class ElementoQuimico implements Identificavel{
 	private String nome;
 	private Long massa;
 	private Long familia;
+	
+	@ManyToMany
+	@JoinTable(name="Atua", joinColumns=@JoinColumn(name="id_Elemento_Quimico"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
+    private Set<Eventos> eventos;
+	
+	public Set<Eventos> getEventos() {
+		return eventos;
+	}
+	
+	public void setMeioAmbientes(Set<Eventos> eventos) {
+		this.eventos = eventos;
+	}
+	
 	
 	public Long getId() {
 		return id;

@@ -1,9 +1,11 @@
 import java.awt.List;
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,9 @@ public class Eventos implements Identificavel {
 	private Long duracao;
 	private String local;
 	private Date data;
+	
+	@ManyToMany(mappedBy="eventos")
+	private Set<ElementoQuimico> elementos;
 	
 	public List getUsuarios() {
 		return usuarios;

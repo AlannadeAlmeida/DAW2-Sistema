@@ -1,8 +1,12 @@
 import java.util.ArrayList;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,12 +14,25 @@ import javax.persistence.Table;
 public class Usuario implements Identificavel{
 	
 	@Id
-	@GeneratedValue Long id;
+	@GeneratedValue
+	private Long id;
 	private String nome;
 	private String senha;
 	private String login;
 	private String email;
 	ArrayList <Denuncia> denuncias;
+	
+	@ManyToMany
+	@JoinTable(name="Auxilia", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Meio_Ambiente"))
+    private Set<MeioAmbiente> meioAmbiente;
+	
+	public Set<MeioAmbiente> getMeioAmbiente() {
+		return meioAmbiente;
+	}
+	
+	public void setMeioAmbientes(Set<MeioAmbiente> meioAmbientes) {
+		this.meioAmbiente = meioAmbientes;
+	}
 	
 	public Long getId() {
 		return id;

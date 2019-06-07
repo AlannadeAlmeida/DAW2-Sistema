@@ -1,26 +1,21 @@
+import java.util.ArrayList;
 
-public class Auxilia {
+public class Beneficio implements Identificavel{
 	
 	private Long id;
-	private Long id_usuario;
-	private Long id_ma;
+	ArrayList <ElementoQuimico> quantidade;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getId_usuario() {
-		return id_usuario;
+	public ArrayList<ElementoQuimico> getQuantidade() {
+		return quantidade;
 	}
-	public void setId_usuario(Long id_usuario) {
-		this.id_usuario = id_usuario;
-	}
-	public Long getId_ma() {
-		return id_ma;
-	}
-	public void setId_ma(Long id_ma) {
-		this.id_ma = id_ma;
+	public void setQuantidade(ArrayList<ElementoQuimico> quantidade) {
+		this.quantidade = quantidade;
 	}
 	@Override
 	public int hashCode() {
@@ -37,7 +32,7 @@ public class Auxilia {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Auxilia other = (Auxilia) obj;
+		Beneficio other = (Beneficio) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -45,13 +40,6 @@ public class Auxilia {
 			return false;
 		return true;
 	}
-	public Auxilia(Long id, Long id_usuario, Long id_ma) {
-		super();
-		this.id = id;
-		this.id_usuario = id_usuario;
-		this.id_ma = id_ma;
-	}
-	
 	
 
 }

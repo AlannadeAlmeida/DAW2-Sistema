@@ -1,6 +1,8 @@
+import javax.persistence.Id;
 
 public class Consequencia implements Identificavel{
 	
+	@Id
 	private Long id;
 	private Long id_ma;
 	private Long id_eq;
