@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +22,12 @@ public class Usuario implements Identificavel{
 	private String login;
 	private String email;
 	ArrayList <Denuncia> denuncias;
+	
+	@OneToOne (mappedBy="end")
+	private Denuncia denuncia;
+	
+	@OneToOne (mappedBy="end")
+	private Eventos eventos;
 	
 	@ManyToMany
 	@JoinTable(name="Auxilia", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Meio_Ambiente"))

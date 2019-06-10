@@ -1,5 +1,8 @@
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -11,6 +14,10 @@ public class Denuncia implements Identificavel {
 	private String cidade;
 	private String regiao;
 	private String local;
+	
+	@OneToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="id_usuario")
+	private Denuncia end;
 	
 	public Long getId() {
 		return id;
