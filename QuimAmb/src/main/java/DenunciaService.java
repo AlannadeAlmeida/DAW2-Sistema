@@ -4,7 +4,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @ApplicationScoped
-public class ElementoQuimicoService implements Serializable, Service<ElementoQuimico> {
+public class DenunciaService implements Serializable, Service<Denuncia> {
 
 	/**
 	 * 
@@ -12,15 +12,15 @@ public class ElementoQuimicoService implements Serializable, Service<ElementoQui
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ElementoQuimicoDAO elementoDAO;
+	private DenunciaDAO denunciaDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(ElementoQuimico user) {
-		elementoDAO.save(user);
+	public void save(Denuncia user) {
+		denunciaDAO.save(user);
 	}
 
 	/* (non-Javadoc)
@@ -28,8 +28,8 @@ public class ElementoQuimicoService implements Serializable, Service<ElementoQui
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(ElementoQuimico user)  {
-			elementoDAO.update(user);
+	public void update(Denuncia user)  {
+		denunciaDAO.update(user);
 	}
 
 	/* (non-Javadoc)
@@ -37,24 +37,25 @@ public class ElementoQuimicoService implements Serializable, Service<ElementoQui
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(ElementoQuimico user) {
-		elementoDAO.remove(user);
+	public void remove(Denuncia user) {
+		denunciaDAO.remove(user);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public ElementoQuimico getByID(long userId)  {
-			return elementoDAO.getByID(userId);
+	public Denuncia getByID(long userId)  {
+			return denunciaDAO.getByID(userId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<ElementoQuimico> getAll() {
-			return elementoDAO.getAll();
+	public List<Denuncia> getAll() {
+			return denunciaDAO.getAll();
 	}
 		
+
 }
