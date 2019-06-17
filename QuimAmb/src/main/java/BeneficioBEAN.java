@@ -15,7 +15,6 @@ public class BeneficioBEAN {
 	private List<Beneficio> beneficios;
 	
 	
-	
 	public List<Beneficio> getBeneficios() {
 		return beneficios;
 	}
@@ -25,11 +24,11 @@ public class BeneficioBEAN {
 	}
 	
 	
-	public Beneficio getElemento() {
+	public Beneficio getBeneficio() {
 		return beneficio;
 	}
 	
-	public void setElemento(Beneficio beneficio) {
+	public void setBeneficio(Beneficio beneficio) {
 		this.beneficio = beneficio;
 	}
 	
