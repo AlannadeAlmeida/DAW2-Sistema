@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public interface Meio {
 	
-	public void cadatrar (Usuario usuario);
+	public void cadastrar (Usuario usuario);
+	
 	
 	// verifica aqui se a senha confere com a recebida como parametro  
 	public boolean autentica(String login, String senha);
@@ -18,7 +19,6 @@ public interface Meio {
 	
 	// getAll retorna todo o objeto da subclasse armazenada em um banco de dados
 	public ArrayList<Usuario> getAll();
-	
 	
 	public ArrayList<Eventos> getByCausa(String causa);
 

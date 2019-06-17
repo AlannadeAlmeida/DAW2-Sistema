@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Usuario")
-public class Usuario implements Identificavel{
+public class Usuario implements Identificavel {
 	
 	@Id
 	@GeneratedValue
@@ -37,7 +37,7 @@ public class Usuario implements Identificavel{
 		return meioAmbiente;
 	}
 	
-	public void setMeioAmbientes(Set<MeioAmbiente> meioAmbientes) {
+	public void setMeioAmbiente(Set<MeioAmbiente> meioAmbientes) {
 		this.meioAmbiente = meioAmbientes;
 	}
 	

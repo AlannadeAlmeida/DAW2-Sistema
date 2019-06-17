@@ -7,7 +7,7 @@ class Testes {
 	void verificarCadastrarUsuario() {
 		Meio m = null;
 		Usuario usuario = new Usuario();
-		m.cadatrar(usuario);
+		m.cadastrar(usuario);
 		assertTrue(m.autentica(usuario.getLogin(), usuario.getSenha()));
 		m.deletarusuario(usuario);
 		assertFalse(m.autentica(usuario.getLogin(), usuario.getSenha()));
@@ -16,6 +16,8 @@ class Testes {
 		m.getById(usuario);
 		equals(usuario);
 	}
+	
+	
 	
 }
 

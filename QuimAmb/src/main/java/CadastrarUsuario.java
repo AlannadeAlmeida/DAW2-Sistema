@@ -22,4 +22,6 @@ public class CadastrarUsuario extends Usuario {
         System.out.println(cadastrarusuario.getNome()+"\n"+cadastrarusuario.getLogin());
      }
 	
+	
+
 }
