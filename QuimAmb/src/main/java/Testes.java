@@ -5,19 +5,24 @@ class Testes {
 
 	@Test
 	void verificarCadastrarUsuario() {
-		Meio m = null;
+		UsuarioService service = new UsuarioService();
 		Usuario usuario = new Usuario();
-		m.cadastrar(usuario);
-		assertTrue(m.autentica(usuario.getLogin(), usuario.getSenha()));
-		m.deletarusuario(usuario);
-		assertFalse(m.autentica(usuario.getLogin(), usuario.getSenha()));
-		m.salvarusuario(usuario);
-		assert(m.autentica(usuario.getLogin(), usuario.getSenha()));
-		m.getById(usuario);
-		equals(usuario);
+		usuario.setLogin("login");
+		usuario.setEmail("email");
+		service.save(usuario);
+		assertNotNull(usuario.getId());
+		Usuario outro = service.getByID(usuario.getId());
+		assertEquals(outro, usuario);
+		usuario.setNome("nome");
+		service.update(usuario);
+		outro = service.getByID(usuario.getId());
+		assertEquals(outro.getNome(), usuario.getNome());
+		service.remove(usuario);
+		outro = service.getByID(usuario.getId());
+		assertNull(outro);
+		
 	}
 	
 	
 	
 }
-
