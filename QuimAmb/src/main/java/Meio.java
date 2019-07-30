@@ -1,5 +1,12 @@
 import java.util.ArrayList;
 
+import entities.ElementoQuimico;
+import entities.Eventos;
+import entities.MeioAmbiente;
+import entities.Produto;
+import entities.SeresVivos;
+import entities.Usuario;
+
 public interface Meio {
 	
 	public void cadastrar (Usuario usuario);

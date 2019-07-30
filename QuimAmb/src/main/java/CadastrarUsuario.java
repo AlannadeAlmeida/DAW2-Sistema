@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import entities.Usuario;
+
 public class CadastrarUsuario extends Usuario {
 
 	public static void main(String[] args) {
