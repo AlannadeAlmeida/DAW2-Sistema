@@ -1,3 +1,4 @@
+package util;
 
 
 import javax.enterprise.context.ApplicationScoped;

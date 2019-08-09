@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.BeneficioDAO;
 import entities.Beneficio;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class BeneficioService implements Serializable, Service<Beneficio> {

@@ -11,5 +11,12 @@
 	<class>entities.Denuncia</class>
 	<class>entities.Usuario</class>
 	<class>entities.Empresa</class>
+	<class>entities.Clima</class>
+	<class>entities.Fauna</class>
+	<class>entities.Flora</class>
+	<class>entities.Regiao</class>
+	<class>entities.Relevo</class>
+	<class>entities.Responsavel</class>
+	<class>entities.Vegetacao</class>
 	</persistence-unit>
 </persistence>

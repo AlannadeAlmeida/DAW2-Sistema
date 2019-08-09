@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.EventosDAO;
 import entities.Eventos;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class EventosService implements Serializable, Service<Eventos> {

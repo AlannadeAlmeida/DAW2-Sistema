@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.ConsequenciaDAO;
 import entities.Consequencia;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class ConsequenciaService implements Serializable, Service<Consequencia> {

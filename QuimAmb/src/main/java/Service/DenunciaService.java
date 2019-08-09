@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.DenunciaDAO;
 import entities.Denuncia;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class DenunciaService implements Serializable, Service<Denuncia> {

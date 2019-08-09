@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.SeresVivosDAO;
 import entities.SeresVivos;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class SeresVivosService implements Serializable, Service<SeresVivos> {

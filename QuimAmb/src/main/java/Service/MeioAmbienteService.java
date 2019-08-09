@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.MeioAmbienteDAO;
 import entities.MeioAmbiente;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class MeioAmbienteService implements Serializable, Service<MeioAmbiente> {

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.UsuarioDAO;
 import entities.Usuario;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class UsuarioService implements Serializable, Service<Usuario> {

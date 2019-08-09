@@ -1,32 +1,30 @@
 package Service;
 import java.io.Serializable;
 import java.util.List;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-
-import DAO.ElementoQuimicoDAO;
-import entities.ElementoQuimico;
+import DAO.RegiaoDAO;
+import entities.Regiao;
 import util.TransacionalCdi;
 
 @ApplicationScoped
-public class ElementoQuimicoService implements Serializable, Service<ElementoQuimico> {
-
+public class RegiaoService implements Serializable, Service<Regiao> {
+ 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ElementoQuimicoDAO elementoDAO;
+	private RegiaoDAO regiaoDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(ElementoQuimico user) {
-		elementoDAO.save(user);
+	public void save(Regiao user) {
+		regiaoDAO.save(user);
 	}
 
 	/* (non-Javadoc)
@@ -34,8 +32,8 @@ public class ElementoQuimicoService implements Serializable, Service<ElementoQui
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(ElementoQuimico user)  {
-			elementoDAO.update(user);
+	public void update(Regiao user)  {
+			regiaoDAO.update(user);
 	}
 
 	/* (non-Javadoc)
@@ -43,24 +41,25 @@ public class ElementoQuimicoService implements Serializable, Service<ElementoQui
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(ElementoQuimico user) {
-		elementoDAO.remove(user);
+	public void remove(Regiao user) {
+		regiaoDAO.remove(user);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public ElementoQuimico getByID(long userId)  {
-			return elementoDAO.getByID(userId);
+	public Regiao getByID(long userId)  {
+			return regiaoDAO.getByID(userId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<ElementoQuimico> getAll() {
-			return elementoDAO.getAll();
+	public List<Regiao> getAll() {
+			return regiaoDAO.getAll();
 	}
 		
+
 }

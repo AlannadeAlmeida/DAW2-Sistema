@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import DAO.ProdutoDAO;
 import entities.Produto;
+import util.TransacionalCdi;
 
 @ApplicationScoped
 public class ProdutoService implements Serializable, Service<Produto> {

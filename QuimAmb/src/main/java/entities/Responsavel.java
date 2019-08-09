@@ -1,25 +1,35 @@
 package entities;
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity 
-@Table(name="Consequencia")
-public class Consequencia implements Identificavel{
+@Entity
+@Table(name="Clima")
+
+public class Responsavel implements Identificavel{
 	
 	@Id
 	private Long id;
-	private double quantidadeMax;
-	private ElementoQuimico prejudiciais;
-	
+	private String nome;
+	private String NomeDaEmpresa;
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNomeDaEmpresa() {
+		return NomeDaEmpresa;
+	}
+	public void setNomeDaEmpresa(String nomeDaEmpresa) {
+		NomeDaEmpresa = nomeDaEmpresa;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -35,7 +45,7 @@ public class Consequencia implements Identificavel{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Consequencia other = (Consequencia) obj;
+		Responsavel other = (Responsavel) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -43,7 +53,6 @@ public class Consequencia implements Identificavel{
 			return false;
 		return true;
 	}
-	
 	
 	
 }
