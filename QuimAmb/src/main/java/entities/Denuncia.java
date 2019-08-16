@@ -1,9 +1,11 @@
 package entities;
-import javax.persistence.CascadeType;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +19,9 @@ public class Denuncia implements Identificavel {
 	private String local;
 	private Denuncia denuncia;
 	
-	@OneToOne (cascade=CascadeType.ALL)
-	@JoinColumn(name="id_usuario")
-	private Denuncia end;
-	
+	@ManyToMany
+	@JoinTable(name="usu_denun", joinColumns=@JoinColumn(name="id_usuario"), inverseJoinColumns=@JoinColumn(name="id_Denuncia"))
+	private Set<Usuario> denuncias;
 	
 	public Long getId() {
 		return id;
@@ -52,11 +53,11 @@ public class Denuncia implements Identificavel {
 	public void setDenuncia(Denuncia denuncia) {
 		this.denuncia = denuncia;
 	}
-	public Denuncia getEnd() {
-		return end;
+	public Set<Usuario> getDenuncias() {
+		return denuncias;
 	}
-	public void setEnd(Denuncia end) {
-		this.end = end;
+	public void setDenuncias(Set<Usuario> denuncias) {
+		this.denuncias = denuncias;
 	}
 	@Override
 	public int hashCode() {

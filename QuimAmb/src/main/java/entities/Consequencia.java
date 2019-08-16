@@ -1,7 +1,11 @@
 package entities;
-import java.util.ArrayList;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity 
@@ -11,7 +15,10 @@ public class Consequencia implements Identificavel{
 	@Id
 	private Long id;
 	private double quantidadeMax;
-	private ElementoQuimico prejudiciais;
+	
+	@ManyToMany
+	@JoinTable(name="conseq_elem", joinColumns=@JoinColumn(name="id_elem"), inverseJoinColumns=@JoinColumn(name="id_cons"))
+	private Set<ElementoQuimico> prejudiciais;
 	
 	public Long getId() {
 		return id;
@@ -20,6 +27,18 @@ public class Consequencia implements Identificavel{
 		this.id = id;
 	}
 	
+	public double getQuantidadeMax() {
+		return quantidadeMax;
+	}
+	public void setQuantidadeMax(double quantidadeMax) {
+		this.quantidadeMax = quantidadeMax;
+	}
+	public Set<ElementoQuimico> getPrejudiciais() {
+		return prejudiciais;
+	}
+	public void setPrejudiciais(Set<ElementoQuimico> prejudiciais) {
+		this.prejudiciais = prejudiciais;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

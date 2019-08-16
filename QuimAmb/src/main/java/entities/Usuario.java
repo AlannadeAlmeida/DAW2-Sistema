@@ -24,7 +24,7 @@ public class Usuario implements Identificavel {
 	private String email;
 	ArrayList <Denuncia> denuncias;
 	
-	@OneToOne (mappedBy="end")
+	@ManyToMany (mappedBy="Denuncia")
 	private Denuncia denuncia;
 	
 	@OneToOne (mappedBy="end")
