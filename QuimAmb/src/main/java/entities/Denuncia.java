@@ -15,16 +15,18 @@ public class Denuncia implements Identificavel {
 	private String cidade;
 	private String regiao;
 	private String local;
+	private Denuncia denuncia;
 	
 	@OneToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="id_usuario")
 	private Denuncia end;
 	
+	
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id_de) {
-		this.id = id_de;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getCidade() {
 		return cidade;
@@ -43,6 +45,18 @@ public class Denuncia implements Identificavel {
 	}
 	public void setLocal(String local) {
 		this.local = local;
+	}
+	public Denuncia getDenuncia() {
+		return denuncia;
+	}
+	public void setDenuncia(Denuncia denuncia) {
+		this.denuncia = denuncia;
+	}
+	public Denuncia getEnd() {
+		return end;
+	}
+	public void setEnd(Denuncia end) {
+		this.end = end;
 	}
 	@Override
 	public int hashCode() {
