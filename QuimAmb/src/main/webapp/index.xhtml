@@ -16,30 +16,30 @@
 				<h:outputText value="Filtros" />
 			</f:facet>
 			<f:facet name="header">
-				<h:outputText value="Elemento Químico" />
+				<h:outputText value="Eventos" />
 			</f:facet>
 
 			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{elementoQuimicoBEAN.elemento.nome}"
+			<p:inputText id="nomeField" value="#{EventosBEAN.eventos.nome}"
 				label="Nome" style="width:350px" />
 
 
 			<p:commandButton id="btnNovo" value="Novo"
-				action="#{elementoQuimicoBEAN.save()}" ajax="false" />
+				action="#{eventosBEAN.save()}" ajax="false" />
 			<p:commandButton id="btnLimpar" value="Limpar"
-				action="#{elementoQuimicoBEAN.limpar()}" ajax="false" />
+				action="#{eventosBEAN.limpar()}" ajax="false" />
 		</p:panelGrid>
 
 
 		<p:dataTable id="dataTableEntidades" border="1" var="ele"
-			value="#{elementoQuimicoBEAN.elementos}">
+			value="#{eventosBEAN.eventos}">
 			<p:column>
 				<f:facet name="header">ID</f:facet>
-				<h:outputText value="#{ele.id}" />
+				<h:outputText value="#{eve.id}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{ele.nome}" />
+				<h:outputText value="#{eve.nome}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
