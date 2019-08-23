@@ -12,6 +12,7 @@ public class Responsavel implements Identificavel{
 	private Long id;
 	private String nome;
 	private String NomeDaEmpresa;
+	
 	public Long getId() {
 		return id;
 	}

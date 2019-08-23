@@ -1,15 +1,10 @@
 package entities;
-import java.awt.List;
 import java.sql.Date;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +12,7 @@ import javax.persistence.Table;
 public class Eventos implements Identificavel {
 
        
-    private List usuarios;
+    private Set usuarios;
    
 	@Id
 	@GeneratedValue    
@@ -26,19 +21,10 @@ public class Eventos implements Identificavel {
 	private Long duracao;
 	private String local;
 	private Date data;
-	
-	@OneToOne (cascade=CascadeType.ALL)
-	@JoinColumn(name="id_usuario")
-	private Usuario end;
-	
-	
-	@ManyToMany(mappedBy="eventos")
-	private Set<ElementoQuimico> elementos;
-	
-	public List getUsuarios() {
+	public Set getUsuarios() {
 		return usuarios;
 	}
-	public void setUsuarios(List usuarios) {
+	public void setUsuarios(Set usuarios) {
 		this.usuarios = usuarios;
 	}
 	public Long getId() {
@@ -88,7 +74,7 @@ public class Eventos implements Identificavel {
 			return false;
 		Eventos other = (Eventos) obj;
 		if (id == null) {
-			if (other.id!= null)
+			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;

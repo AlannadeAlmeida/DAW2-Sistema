@@ -1,10 +1,6 @@
 import java.util.ArrayList;
 
-import entities.ElementoQuimico;
 import entities.Eventos;
-import entities.MeioAmbiente;
-import entities.Produto;
-import entities.SeresVivos;
 import entities.Usuario;
 
 public interface Meio {
@@ -28,14 +24,5 @@ public interface Meio {
 	public ArrayList<Usuario> getAll();
 	
 	public ArrayList<Eventos> getByCausa(String causa);
-
-	public ArrayList<ElementoQuimico> getByNome(String nome);
-	
-	public ArrayList<MeioAmbiente> getByfloresta(String floresta);
-	
-	public ArrayList<Produto> getBytempodedecomposicao(String tempodedecomposicao);
-	
-	public ArrayList<SeresVivos> getByespecie(String especie);
-	
 	
 }

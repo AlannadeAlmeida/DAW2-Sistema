@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,22 +23,16 @@ public class Usuario implements Identificavel {
 	private String email;
 	ArrayList <Denuncia> denuncias;
 	
-	@ManyToMany (mappedBy="Denuncia")
-	private Denuncia denuncia;
-	
-	@OneToOne (mappedBy="end")
-	private Eventos eventos;
-	
 	@ManyToMany
-	@JoinTable(name="Auxilia", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Meio_Ambiente"))
-    private Set<MeioAmbiente> meioAmbiente;
+	@JoinTable(name="Auxilia", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Regiao"))
+    private Set<Regiao> regioes;
 	
-	public Set<MeioAmbiente> getMeioAmbiente() {
-		return meioAmbiente;
+	public Set<Regiao> getRegiao() {
+		return regioes;
 	}
 	
-	public void setMeioAmbiente(Set<MeioAmbiente> meioAmbientes) {
-		this.meioAmbiente = meioAmbientes;
+	public void setMeioAmbiente(Set<Regiao> regioes) {
+		this.regioes = regioes;
 	}
 	
 	public Long getId() {
