@@ -5,6 +5,9 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,16 @@ public class Eventos implements Identificavel {
 	private Long duracao;
 	private String local;
 	private Date data;
+	
+	@ManyToMany
+	@JoinTable(name="Denunciar", joinColumns=@JoinColumn(name="id_Eventos"), inverseJoinColumns=@JoinColumn(name="id_Denuncia"))
+  
+	private Set<Denuncia> denuncias;
+	
+	public Set<Denuncia> getDenuncia() {
+		return denuncias;
+	}
+	
 	public Set getUsuarios() {
 		return usuarios;
 	}

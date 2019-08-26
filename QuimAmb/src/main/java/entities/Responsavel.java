@@ -1,6 +1,11 @@
 package entities;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +17,14 @@ public class Responsavel implements Identificavel{
 	private Long id;
 	private String nome;
 	private String NomeDaEmpresa;
+	
+	@ManyToMany
+	@JoinTable(name="Evento", joinColumns=@JoinColumn(name="id_Responsavel"), inverseJoinColumns=@JoinColumn(name="id_Evento"))
+    private Set<Eventos> evento;
+	
+	public Set<Eventos> getEventos() {
+		return evento;
+	}
 	
 	public Long getId() {
 		return id;

@@ -1,6 +1,11 @@
 package entities;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -13,6 +18,15 @@ public class Regiao implements Identificavel{
 	private String clima;
 	private String relevo;
 	private String nome;
+	
+	@ManyToMany
+	@JoinTable(name="Eventos", joinColumns=@JoinColumn(name="id_Regiao"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
+    private Set<Eventos> evento;
+	
+	public Set<Eventos> getEventos() {
+		return evento;
+	}
+	
 	public Long getId() {
 		return id;
 	}
