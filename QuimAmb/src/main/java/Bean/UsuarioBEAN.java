@@ -1,14 +1,16 @@
 package Bean;
 import java.util.List;
-import javax.enterprise.context.SessionScoped;
+
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import Service.UsuarioService;
 import entities.Usuario;
 
 
 @Named
-@SessionScoped
+@ViewScoped
 public class UsuarioBEAN {
 	
 	@Inject

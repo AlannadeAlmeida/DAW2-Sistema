@@ -6,11 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Clima")
-
 public class Responsavel implements Identificavel{
 	
 	@Id
@@ -19,7 +16,7 @@ public class Responsavel implements Identificavel{
 	private String NomeDaEmpresa;
 	
 	@ManyToMany
-	@JoinTable(name="Evento", joinColumns=@JoinColumn(name="id_Responsavel"), inverseJoinColumns=@JoinColumn(name="id_Evento"))
+	@JoinTable(name="resp_eve", joinColumns=@JoinColumn(name="id_Responsavel"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
     private Set<Eventos> evento;
 	
 	public Set<Eventos> getEventos() {

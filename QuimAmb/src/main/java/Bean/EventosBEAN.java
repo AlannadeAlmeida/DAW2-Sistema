@@ -1,9 +1,7 @@
 package Bean;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,8 +10,6 @@ import entities.Eventos;
 
 @Named
 @ViewScoped
-@SessionScoped
-@RequestScoped
 public class EventosBEAN {
 	
 	@Inject
@@ -24,22 +20,13 @@ public class EventosBEAN {
 	private List<Eventos> evento;
 	
 	
-	
 	public List<Eventos> getEvento() {
 		return evento;
-	}
-	
-	public void setElementos(List<Eventos> evento) {
-		this.evento = evento;
 	}
 	
 	
 	public Eventos getEventos() {
 		return eventos;
-	}
-	
-	public void setElemento(Eventos eventos) {
-		this.evento = evento;
 	}
 	
 	public void save() {

@@ -9,9 +9,9 @@
 	<class>entities.Responsavel</class>
 	
 	<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.4.170:5432/QuimicaAmbiental2"/>
-			<property name="javax.persistence.jdbc.user" value="ifotouser"/>
-			<property name="javax.persistence.jdbc.password" value="ifotopassword"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.4.170:5432/quimica_ambiental"/>
+			<property name="javax.persistence.jdbc.user" value="quimica_ambiental"/>
+			<property name="javax.persistence.jdbc.password" value="123456"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />

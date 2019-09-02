@@ -14,8 +14,9 @@ import javax.persistence.Table;
 @Table(name="Eventos")
 public class Eventos implements Identificavel {
 
-       
-    private Set usuarios;
+    @ManyToMany
+    @JoinTable(name="usu_eve", joinColumns=@JoinColumn(name="id_Eventos"), inverseJoinColumns=@JoinColumn(name="id_usu"))
+    private Set<Usuario> usuarios;
    
 	@Id
 	@GeneratedValue    
@@ -26,18 +27,17 @@ public class Eventos implements Identificavel {
 	private Date data;
 	
 	@ManyToMany
-	@JoinTable(name="Denunciar", joinColumns=@JoinColumn(name="id_Eventos"), inverseJoinColumns=@JoinColumn(name="id_Denuncia"))
-  
+	@JoinTable(name="Denunciar", joinColumns=@JoinColumn(name="id_Eventos"), inverseJoinColumns=@JoinColumn(name="id_Denuncia")) 
 	private Set<Denuncia> denuncias;
 	
 	public Set<Denuncia> getDenuncia() {
 		return denuncias;
 	}
 	
-	public Set getUsuarios() {
+	public Set<Usuario> getUsuarios() {
 		return usuarios;
 	}
-	public void setUsuarios(Set usuarios) {
+	public void setUsuarios(Set<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
 	public Long getId() {

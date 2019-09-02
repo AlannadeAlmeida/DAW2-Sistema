@@ -20,7 +20,7 @@ public class Regiao implements Identificavel{
 	private String nome;
 	
 	@ManyToMany
-	@JoinTable(name="Eventos", joinColumns=@JoinColumn(name="id_Regiao"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
+	@JoinTable(name="Eventos_regiao", joinColumns=@JoinColumn(name="id_Regiao"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
     private Set<Eventos> evento;
 	
 	public Set<Eventos> getEventos() {

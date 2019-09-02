@@ -1,5 +1,5 @@
 package entities;
-import java.util.ArrayList;
+
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -8,10 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+
 
 @Entity
-@Table(name="Usuario")
 public class Usuario implements Identificavel {
 	
 	@Id
@@ -21,18 +20,33 @@ public class Usuario implements Identificavel {
 	private String senha;
 	private String login;
 	private String email;
-	ArrayList <Denuncia> denuncias;
 	
 	@ManyToMany
-	@JoinTable(name="Auxilia", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Regiao"))
+	@JoinTable(name="Den_usu", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
+	private Set<Denuncia> denuncia;
+	
+	@ManyToMany
+	@JoinTable(name="Reg_usu", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Regiao"))
     private Set<Regiao> regioes;
 	
 	public Set<Regiao> getRegiao() {
 		return regioes;
 	}
 	
-	public void setMeioAmbiente(Set<Regiao> regioes) {
+	public Set<Denuncia> getDenuncia() {
+		return denuncia;
+	}
+	
+	public Set<Regiao> getRegioes() {
+		return regioes;
+	}
+
+	public void setRegioes(Set<Regiao> regioes) {
 		this.regioes = regioes;
+	}
+	
+	public void setDenuncia(Set<Denuncia> denuncia) {
+		this.denuncia = denuncia;
 	}
 	
 	public Long getId() {
