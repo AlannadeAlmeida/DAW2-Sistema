@@ -1,17 +1,19 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.UsuarioService;
 import entities.Usuario;
+import service.UsuarioService;
 
 
 @Named
 @ViewScoped
-public class UsuarioBEAN {
+public class UsuarioBEAN implements Serializable{
 	
 	@Inject
 	private UsuarioService service;
@@ -20,7 +22,11 @@ public class UsuarioBEAN {
 	
 	private List<Usuario> usuarios;
 	
-	
+	@PostConstruct
+	public void init() {
+		usuario = newEntidade();
+		usuarios = getService().getAll();
+	}
 	
 	public List<Usuario> getUsuarios() {
 		return usuarios;

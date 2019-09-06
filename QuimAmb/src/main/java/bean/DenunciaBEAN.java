@@ -1,16 +1,18 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.DenunciaService;
 import entities.Denuncia;
+import service.DenunciaService;
 
 @Named
 @ViewScoped
-public class DenunciaBEAN {
+public class DenunciaBEAN implements Serializable{
 	
 	@Inject
 	private DenunciaService service;
@@ -19,7 +21,11 @@ public class DenunciaBEAN {
 	
 	private List<Denuncia> denuncias;
 	
-	
+	@PostConstruct
+	public void init() {
+		denuncia = newEntidade();
+		denuncias = getService().getAll();
+	}
 	
 	public List<Denuncia> getDenuncias() {
 		return denuncias;

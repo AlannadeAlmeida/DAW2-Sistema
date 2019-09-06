@@ -1,16 +1,18 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.RegiaoService;
 import entities.Regiao;
+import service.RegiaoService;
 
 @Named
 @ViewScoped
-public class RegiaoBEAN {
+public class RegiaoBEAN implements Serializable{
 	
 	@Inject
 	private RegiaoService service;
@@ -19,7 +21,11 @@ public class RegiaoBEAN {
 	
 	private List<Regiao> regioes;
 	
-	
+	@PostConstruct
+	public void init() {
+		regiao = newEntidade();
+		regioes = getService().getAll();
+	}
 	
 	public List<Regiao> getRegioes() {
 		return regioes;

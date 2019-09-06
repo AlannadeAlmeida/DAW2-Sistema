@@ -1,11 +1,11 @@
-package Service;
+package service;
 import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import DAO.DenunciaDAO;
+import dao.DenunciaDAO;
 import entities.Denuncia;
 import util.TransacionalCdi;
 

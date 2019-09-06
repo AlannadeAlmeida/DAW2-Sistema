@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import entities.Regiao;
 
 public class RegiaoDAO extends DAO <Regiao> {

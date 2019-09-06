@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import entities.Denuncia;
 
 public class DenunciaDAO extends DAO <Denuncia> {

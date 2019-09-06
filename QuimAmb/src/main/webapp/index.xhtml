@@ -19,9 +19,9 @@
 				<h:outputText value="Eventos" />
 			</f:facet>
 
-			<p:outputLabel value="Nome: " for="nomeField" />
-			<p:inputText id="nomeField" value="#{eventosBEAN.eventos.nome}"
-				label="Nome" style="width:350px" />
+			<p:outputLabel value="Causa: " for="nomeField" />
+			<p:inputText id="nomeField" value="#{eventosBEAN.eventos.causa}"
+				label="Causa" style="width:350px" />
 
 
 			<p:commandButton id="btnNovo" value="Novo"
@@ -31,22 +31,22 @@
 		</p:panelGrid>
 
 
-		<p:dataTable id="dataTableEntidades" border="1" var="ele"
-			value="#{eventosBEAN.eventos}">
+		<p:dataTable id="dataTableEntidades" border="1" var="eve"
+			value="#{eventosBEAN.entidades}">
 			<p:column>
 				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{eve.id}" />
 			</p:column>
 			<p:column>
-				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{eve.nome}" />
+				<f:facet name="header">Causa</f:facet>
+				<h:outputText value="#{eve.causa}" />
 			</p:column>
 			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
-					action="#{usuarioBean.remove(ele)}"></p:commandButton>
+					action="#{usuarioBean.remove(eve)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
-					action="#{usuarioBean.editar(ele.id)}"></p:commandButton>
+					action="#{usuarioBean.editar(eve.id)}"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>

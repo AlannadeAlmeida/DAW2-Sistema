@@ -5,8 +5,8 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import Service.UsuarioService;
 import entities.Usuario;
+import service.UsuarioService;
 
 public class TesteVerificaUsuario {
 	

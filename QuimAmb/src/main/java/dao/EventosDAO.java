@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import entities.Eventos;
 
 public class EventosDAO extends DAO <Eventos>{

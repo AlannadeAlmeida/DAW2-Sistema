@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import entities.Responsavel;
 
 public class ResponsavelDAO extends DAO <Responsavel> {

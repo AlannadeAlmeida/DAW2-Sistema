@@ -6,8 +6,8 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import Service.DenunciaService;
 import entities.Denuncia;
+import service.DenunciaService;
 
 public class TesteDenuncia {
 	

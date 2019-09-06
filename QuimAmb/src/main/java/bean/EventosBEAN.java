@@ -1,27 +1,31 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.EventosService;
 import entities.Eventos;
+import service.EventosService;
 
 @Named
 @ViewScoped
-public class EventosBEAN {
+public class EventosBEAN implements Serializable{
 	
 	@Inject
 	private EventosService service;
 
 	private Eventos eventos;
 	
-	private List<Eventos> evento;
+	private List<Eventos> entidades;
 	
-	
-	public List<Eventos> getEvento() {
-		return evento;
+	@PostConstruct
+	public void init() {
+		eventos = newEntidade();
+		entidades = getService().getAll();
 	}
 	
 	
@@ -40,7 +44,7 @@ public class EventosBEAN {
 	}
 
 	public void limpar() {
-		evento = getService().getAll();
+		entidades = getService().getAll();
 		eventos = newEntidade();
 	}
 
@@ -50,6 +54,9 @@ public class EventosBEAN {
 
 	public EventosService getService() {
 		return service;
+	}
+	public List<Eventos> getEntidades() {
+		return entidades;
 	}
 	
 

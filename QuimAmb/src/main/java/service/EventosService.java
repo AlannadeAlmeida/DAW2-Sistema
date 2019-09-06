@@ -1,32 +1,32 @@
-package Service;
+package service;
 import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import DAO.ResponsavelDAO;
-import entities.Responsavel;
+import dao.EventosDAO;
+import entities.Eventos;
 import util.TransacionalCdi;
 
 @ApplicationScoped
-public class ResponsavelService implements Serializable, Service<Responsavel> {
- 
+public class EventosService implements Serializable, Service<Eventos> {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private ResponsavelDAO responsavelDAO;
+	private EventosDAO eventosDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Responsavel user) {
-		responsavelDAO.save(user);
+	public void save(Eventos user) {
+		eventosDAO.save(user);
 	}
 
 	/* (non-Javadoc)
@@ -34,8 +34,8 @@ public class ResponsavelService implements Serializable, Service<Responsavel> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Responsavel user)  {
-			responsavelDAO.update(user);
+	public void update(Eventos user)  {
+		eventosDAO.update(user);
 	}
 
 	/* (non-Javadoc)
@@ -43,25 +43,23 @@ public class ResponsavelService implements Serializable, Service<Responsavel> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Responsavel user) {
-		responsavelDAO.remove(user);
+	public void remove(Eventos user) {
+		eventosDAO.remove(user);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Responsavel getByID(long userId)  {
-			return responsavelDAO.getByID(userId);
+	public Eventos getByID(long userId)  {
+			return eventosDAO.getByID(userId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Responsavel> getAll() {
-			return responsavelDAO.getAll();
+	public List<Eventos> getAll() {
+			return eventosDAO.getAll();
 	}
-		
-
 }

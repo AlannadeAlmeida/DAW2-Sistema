@@ -1,32 +1,31 @@
-package Service;
+package service;
 import java.io.Serializable;
 import java.util.List;
-
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import DAO.UsuarioDAO;
-import entities.Usuario;
+import dao.RegiaoDAO;
+import entities.Regiao;
 import util.TransacionalCdi;
 
 @ApplicationScoped
-public class UsuarioService implements Serializable, Service<Usuario> {
-
+public class RegiaoService implements Serializable, Service<Regiao> {
+ 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -7803325791425670859L;
 	
 	@Inject
-	private UsuarioDAO usuarioDAO;
+	private RegiaoDAO regiaoDAO;
 	
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#save(br.edu.ifpb.esperanca.daw2.ifoto.entities.Usuario)
 	 */
 	@Override
 	@TransacionalCdi
-	public void save(Usuario user) {
-		usuarioDAO.save(user);
+	public void save(Regiao user) {
+		regiaoDAO.save(user);
 	}
 
 	/* (non-Javadoc)
@@ -34,8 +33,8 @@ public class UsuarioService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void update(Usuario user)  {
-		usuarioDAO.update(user);
+	public void update(Regiao user)  {
+			regiaoDAO.update(user);
 	}
 
 	/* (non-Javadoc)
@@ -43,24 +42,25 @@ public class UsuarioService implements Serializable, Service<Usuario> {
 	 */
 	@Override
 	@TransacionalCdi
-	public void remove(Usuario user) {
-		usuarioDAO.remove(user);
+	public void remove(Regiao user) {
+		regiaoDAO.remove(user);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getByID(long)
 	 */
 	@Override
-	public Usuario getByID(long userId)  {
-			return usuarioDAO.getByID(userId);
+	public Regiao getByID(long userId)  {
+			return regiaoDAO.getByID(userId);
 	}
 
 	/* (non-Javadoc)
 	 * @see br.edu.ifpb.esperanca.daw2.services.Service#getAll()
 	 */
 	@Override
-	public List<Usuario> getAll() {
-			return usuarioDAO.getAll();
+	public List<Regiao> getAll() {
+			return regiaoDAO.getAll();
 	}
+		
 
 }

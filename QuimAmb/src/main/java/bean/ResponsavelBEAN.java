@@ -1,16 +1,18 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.ResponsavelService;
 import entities.Responsavel;
+import service.ResponsavelService;
 
 @Named
 @ViewScoped
-public class ResponsavelBEAN {
+public class ResponsavelBEAN implements Serializable{
 	
 	@Inject
 	private ResponsavelService service;
@@ -19,7 +21,11 @@ public class ResponsavelBEAN {
 	
 	private List<Responsavel> responsaveis;
 	
-	
+	@PostConstruct
+	public void init() {
+		responsavel = newEntidade();
+		responsaveis = getService().getAll();
+	}
 	
 	public List<Responsavel> getResponsaveis() {
 		return responsaveis;

@@ -1,16 +1,18 @@
-package Bean;
+package bean;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Service.EmpresaService;
 import entities.Empresa;
+import service.EmpresaService;
 
 @Named
 @ViewScoped
-public class EmpresaBEAN {
+public class EmpresaBEAN implements Serializable {
 	
 	@Inject
 	private EmpresaService service;
@@ -19,7 +21,11 @@ public class EmpresaBEAN {
 	
 	private List<Empresa> empresas;
 	
-	
+	@PostConstruct
+	public void init() {
+		empresa = newEntidade();
+		empresas = getService().getAll();
+	}
 	
 	public List<Empresa> getEmpresas() {
 		return empresas;

@@ -1,4 +1,4 @@
-package DAO;
+package dao;
 import entities.Usuario;
 
 public class UsuarioDAO extends DAO <Usuario> {
