@@ -1,14 +1,12 @@
 package bean;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import entities.Eventos;
+import entities.Usuario;
 import service.EventosService;
 
 @Named
@@ -57,6 +55,11 @@ public class EventosBEAN implements Serializable{
 	}
 	public List<Eventos> getEntidades() {
 		return entidades;
+	}
+	
+	public void remove(Eventos entidade) {
+		getService().remove(entidade);
+		limpar();
 	}
 	
 

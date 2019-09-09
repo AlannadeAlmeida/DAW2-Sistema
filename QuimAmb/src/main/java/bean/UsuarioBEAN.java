@@ -1,12 +1,10 @@
 package bean;
 import java.io.Serializable;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-
 import entities.Usuario;
 import service.UsuarioService;
 
@@ -66,6 +64,11 @@ public class UsuarioBEAN implements Serializable{
 
 	public UsuarioService getService() {
 		return service;
+	}
+	
+	public void remove(Usuario entidade) {
+		getService().remove(entidade);
+		limpar();
 	}
 
 }

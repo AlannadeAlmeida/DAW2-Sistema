@@ -22,6 +22,18 @@
 			<p:outputLabel value="Causa: " for="nomeField" />
 			<p:inputText id="nomeField" value="#{eventosBEAN.eventos.causa}"
 				label="Causa" style="width:350px" />
+				
+			<p:outputLabel value="Local: " for="nomeLocal" />
+			<p:inputText id="nomeLocal" value="#{eventosBEAN.eventos.local}"
+				label="Local" style="width:350px" />
+				
+			<p:outputLabel value="Duaração: " for="nomeDuracao" />
+			<p:inputText id="nomeDuracao" value="#{eventosBEAN.eventos.duracao}"
+				label="Duração" style="width:350px" />
+				
+			<p:outputLabel value="Data: " for="nomeData" />
+			<p:inputText id="nomeData" value="#{eventosBEAN.eventos.data}"
+				label="Data" style="width:350px" />
 
 
 			<p:commandButton id="btnNovo" value="Novo"
@@ -42,14 +54,25 @@
 				<h:outputText value="#{eve.causa}" />
 			</p:column>
 			<p:column>
+				<f:facet name="header">Local</f:facet>
+				<h:outputText value="#{eve.local}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Duração</f:facet>
+				<h:outputText value="#{eve.duracao}" />
+			</p:column>
+			<p:column>
+				<f:facet name="header">Data</f:facet>
+				<h:outputText value="#{eve.data}" />
+			</p:column>
+			<p:column>
 				<f:facet name="header">Opções</f:facet>
 				<p:commandButton value="Remover" ajax="false"
-					action="#{usuarioBean.remove(eve)}"></p:commandButton>
+					action="#{eventosBEAN.remove(eve)}"></p:commandButton>
 				<p:commandButton value="Editar" ajax="false"
-					action="#{usuarioBean.editar(eve.id)}"></p:commandButton>
+					action="#{eventosBEAN.editar(eve.id)}"></p:commandButton>
 			</p:column>
 		</p:dataTable>
 	</h:form>
-
 </h:body>
 </html>
