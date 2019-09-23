@@ -5,25 +5,28 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title> Meio Ambiente Saudável </title>
-</h:head>
 
+</h:head>
 
 <h:body>
 	<p:messages />
+	
+<div style="width:25%" class="ui-g">
+	
 		<h:form>
-    <p:panel id="panel" header="Register">
+    <p:panel id="panel" header="Cadastrar">
  
         <p:focus context="panel"/>
  
         <p:messages />
  
         <h:panelGrid columns="3">
-            <p:outputLabel for="username" value="Nome" />
+            <p:outputLabel for="username" value="Nome:" />
             <p:inputText id="username" value="#{focusView.username}" required="true" label="Firstname">
                 <f:validateLength minimum="2" />
             </p:inputText>
             <p:message for="username" />
-            <p:outputLabel for="email" value="Email" />
+            <p:outputLabel for="email" value="Email:" />
             <p:inputText id="email" value="#{focusView.email}" required="true" label="Surname"/>
             <p:message for="email" />
             <p:outputLabel for="pwd2" value="Senha: "/>         	
@@ -31,7 +34,8 @@
         </h:panelGrid>
         <p:commandButton id="submitButton" value="Save" update="@parent" action="#{focusView.save}" />
     </p:panel>
-</h:form>
+ </h:form>
+</div>
 </h:body>
 
 </html>
