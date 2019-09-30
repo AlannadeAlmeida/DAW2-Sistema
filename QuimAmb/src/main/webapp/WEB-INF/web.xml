@@ -12,4 +12,39 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>login.xhtml</welcome-file>
+	</welcome-file-list>
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>qaJdbcRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/login.xhtml</form-login-page>
+			<form-error-page>/login.xhtml?error=true</form-error-page>
+		</form-login-config>
+	</login-config>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Área protegida</web-resource-name>
+			<description />
+			<url-pattern>/outros/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<description />
+			<role-name>ADMIN</role-name>
+			<role-name>OUTROS</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<security-role>
+		<role-name>ADMIN</role-name>
+	</security-role>
+	<security-role>
+		<role-name>OUTROS</role-name>
+	</security-role>
 </web-app>

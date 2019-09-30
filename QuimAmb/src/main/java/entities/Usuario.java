@@ -20,6 +20,7 @@ public class Usuario implements Identificavel {
 	private String senha;
 	private String login;
 	private String email;
+	private String grupo;
 	
 	@ManyToMany
 	@JoinTable(name="Den_usu", joinColumns=@JoinColumn(name="id_Usuario"), inverseJoinColumns=@JoinColumn(name="id_Eventos"))
@@ -108,6 +109,13 @@ public class Usuario implements Identificavel {
 			return false;
 		return true;
 	}
+
+	public String getGrupo() {
+		return grupo;
+	}
 	
+	public void setGrupo(String grupo) {
+		this.grupo = grupo;
+	}
 	
 }
