@@ -46,11 +46,19 @@
 				</p:dock>
 			</p:layoutUnit>
 
-			<p:layoutUnit position="west" size="200" header="Sumário">
+			<p:layoutUnit position="west" size="250" header="Sumário">
+				<p:menu>
+						<p:menuitem value="Legislação Ambiental"   outcome="legislacaoambiental.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Litosfera"  outcome="litosfera.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Poluição do ar"  outcome="poluicaodoareenergia.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Recursos Hídricos" outcome="recursoshidricos.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Contaminação da água"  outcome="contaminacaoderecursosetratamentodeaguaseefluentesdomesticos.xhtml" style="background-color: pink"/>
+				</p:menu>
+
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="center">
-				Login
+				<ui:include src="./login.xhtml"></ui:include>
 			</p:layoutUnit>
 
 		</p:layout>

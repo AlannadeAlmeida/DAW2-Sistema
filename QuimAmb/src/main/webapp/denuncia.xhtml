@@ -26,7 +26,7 @@
 					<p:menuitem value="Logo" />
 					<p:button id="submitButton1" value="Fórum" 
 						    style="background-color: pink" />
-					<p:button id="submitButton2" value="Denúncia"
+					<p:button id="submitButton2" value="Denúncia" 
 						 	style="background-color: pink"/>
 					<p:button id="submitButton3" value="Cadastro" 
 						 	style="background-color: pink" />
@@ -48,17 +48,17 @@
 
 			<p:layoutUnit position="west" size="250" header="Sumário">
 				<p:menu>
-						<p:menuitem value="Legislação Ambiental"   outcome="legislacaoambiental.xhtml" />
-						<p:menuitem value="Litosfera"  outcome="litosfera.xhtml"/>
-						<p:menuitem value="Poluição do ar"  outcome="poluicaodoareenergia.xhtml"/>
-						<p:menuitem value="Recursos Hídricos" outcome="recursoshidricos.xhtml"/>
-						<p:menuitem value="Contaminação da água"  outcome="contaminacaoderecursosetratamentodeaguaseefluentesdomesticos.xhtml"/>
+						<p:menuitem value="Legislação Ambiental"   outcome="legislacaoambiental.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Litosfera"  outcome="litosfera.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Poluição do ar"  outcome="poluicaodoareenergia.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Recursos Hídricos" outcome="recursoshidricos.xhtml" style="background-color: pink"/>
+						<p:menuitem value="Contaminação da água"  outcome="contaminacaoderecursosetratamentodeaguaseefluentesdomesticos.xhtml" style="background-color: pink"/>
 				</p:menu>
 
 			</p:layoutUnit>
 			
 			<p:layoutUnit position="center">
-				Denuncia
+				<ui:include src="./outros/denuncia.xhtml"></ui:include>
 			</p:layoutUnit>
 			
 			
