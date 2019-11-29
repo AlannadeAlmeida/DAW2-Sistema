@@ -13,6 +13,12 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Usuario implements Identificavel {
 	
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nome=" + nome + ", senha=" + senha + ", login=" + login + ", email=" + email
+				+ ", grupo=" + grupo + ", denuncia=" + denuncia + ", regioes=" + regioes + "]";
+	}
+
 	@Id
 	@GeneratedValue
 	private Long id;
