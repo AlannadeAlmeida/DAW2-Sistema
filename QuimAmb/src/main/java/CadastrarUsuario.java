@@ -11,17 +11,17 @@ public class CadastrarUsuario extends Usuario {
         System.out.println("BEM VINDO AO CADASTRO DE USUÁRIOS");
         System.out.println("Digite os dados: "+"\nNome ");
         String nome = l.nextLine();
-        System.out.println("Login");
-        String login = l.nextLine();
+        System.out.println("Email");
+        String email = l.nextLine();
         System.out.println("Senha de acesso");
         int senha = l.nextInt();
         Usuario cadastrarusuario;
         cadastrarusuario = new Usuario();
         cadastrarusuario.setNome(nome);
-        cadastrarusuario.setLogin(login);
+        cadastrarusuario.setEmail(email);
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         usuarios.add(cadastrarusuario);
-        System.out.println(cadastrarusuario.getNome()+"\n"+cadastrarusuario.getLogin());
+        System.out.println(cadastrarusuario.getNome()+"\n"+cadastrarusuario.getEmail());
      }
 	
 	

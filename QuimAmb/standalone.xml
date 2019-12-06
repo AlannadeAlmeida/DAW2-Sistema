@@ -159,7 +159,7 @@
                     </security>
                 </datasource>
                 <datasource jndi-name="java:/qaDS" pool-name="PostgreSQLPool">
-                    <connection-url>jdbc:postgresql://192.168.4.170:5432/quimica_ambiental</connection-url>
+                    <connection-url>jdbc:postgresql://192.168.4.104:5432/quimica_ambiental</connection-url>
                     <driver>postgres</driver>
                     <security>
                         <user-name>quimica_ambiental</user-name>

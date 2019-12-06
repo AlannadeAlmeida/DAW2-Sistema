@@ -16,7 +16,6 @@ public class TesteVerificaUsuario {
 		void verificarCadastrarUsuario() {
 			UsuarioService service = new UsuarioService();
 			Usuario usuario = new Usuario();
-			usuario.setLogin("login");
 			usuario.setEmail("email");
 			service.save(usuario);
 			assertNotNull(usuario.getId());
