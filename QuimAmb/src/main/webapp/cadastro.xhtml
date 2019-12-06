@@ -32,7 +32,8 @@
             <p:outputLabel for="pwd2" value="Senha: "/>         	
             <p:password id="pwd2" value="#{usuarioBEAN.usuario.senha}" label="Password 2" required="true" />
         </h:panelGrid>
-        <p:commandButton id="submitButton" value="Save" update="@parent" action="#{usuarioBEAN.save()}" />
+        <p:commandButton id="submitButton" value="Save" update="@parent" action="#{usuarioBEAN.save()}"  />
+
     </p:panel>
  </h:form>
 </div>
